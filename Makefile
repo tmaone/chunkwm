@@ -9,7 +9,7 @@ all: $(BINS)
 copy:
 
 init:
-	ln -sf ../../../../src src/plugins/blurchunkwm/src
+	ln -sf ../../../../src src/plugins/blur/chunkwm/src
 
 install: BUILD_FLAGS=-O2 -std=c++11 -Wall -Wno-deprecated
 install: clean $(BINS) copy
