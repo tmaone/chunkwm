@@ -1,9 +1,9 @@
-BUILD_FLAGS		= -O0 -g -std=c++11 -Wall
+BUILD_FLAGS		= -O0 -g -std=c++11 -Wall $(shell freetype-config --cflags)
 BUILD_PATH		= ./../../../plugins
 SRC				= ./plugin.cpp
 BINS			= $(BUILD_PATH)/bar.so
 INCLUDE         = -I/opt/local/include -I/opt/local/include/freetype2
-LINK			= -L/opt/local/lib -shared -fPIC -framework Carbon -framework ApplicationServices -framework OpenGL -lfreetype
+LINK			= -L/opt/local/lib -shared -fPIC -framework Carbon -framework ApplicationServices -framework OpenGL -lfreetype $(shell freetype-config --libs) `pkg-config --cflags --libs freetype2`
 
 all: $(BINS)
 
