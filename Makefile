@@ -9,10 +9,10 @@ all: $(BINS)
 copy:
 
 init:
-	ln -sf ../../../../src src/plugins/blur/chunkwm/src
+	bash -c '[ ! -d src/plugins/blur/chunkwm/src ] && ln -sf ../../../../src src/plugins/blur/chunkwm/src || echo ok'
 
 install: BUILD_FLAGS=-O2 -std=c++11 -Wall -Wno-deprecated
-install: clean $(BINS) copy
+install: clean init $(BINS)
 
 .PHONY: all clean install chunkc
 
