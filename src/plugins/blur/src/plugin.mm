@@ -29,8 +29,8 @@ internal const char *PluginVersion = "0.2.1";
 internal chunkwm_api API;
 
 internal bool DoBlur = true;
-internal float BlurRange = 0.0;
-internal float BlurSigma = 0.0;
+internal float BlurRange = 3.0;
+internal float BlurSigma = 2.0;
 internal char *TmpWallpaperPath = NULL;
 
 internal const char *HelpMessage =
