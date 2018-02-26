@@ -8,6 +8,10 @@ all: $(BINS)
 
 copy:
 
+init:
+	git subtree add --prefix=src/plugins/blur https://github.com/splintah/blur master
+	ln -sf ../../../src src/plugins/blurchunkwm/src
+
 install: BUILD_FLAGS=-O2 -std=c++11 -Wall -Wno-deprecated
 install: clean $(BINS) copy
 
